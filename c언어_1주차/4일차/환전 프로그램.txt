@@ -1,0 +1,176 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int won;
+	int money;
+	int dollar;
+	int yen;
+	int euro;
+	int yuan;
+	int pound;
+   
+    float USD;
+    float JPY;
+    float EUR;
+    float CNY;
+    float GBP;
+   
+    int exchange1;
+    
+    printf("환전을 원하는 금액을 입력하세요(원화) : ");
+    scanf("%d", &won);
+   
+    printf("환전할 외화를 선택하세요(1:USD, 2:JPY, 3:EUR, 4:CNY, 5:GBP) : ",money);
+    scanf("%d", &money);
+   
+    USD = 1320.23;
+    JPY = 946.87;
+    EUR = 1370.68;
+    CNY = 189.20;
+    GBP = 1536.58;
+   
+   dollar= won/USD;
+   yen = won/JPY;
+   euro = won/EUR;
+   yuan = won/CNY;
+   pound = won/GBP;
+   
+   if (money == 1)
+   {
+    printf("기준 환율 : %.2f\n", USD);
+      printf("환전결과\n");
+      printf("달러 : %d달러\n", dollar);
+
+      exchange1 = 10 * (floor((won-(dollar*USD))*0.1));
+      printf("거스름돈 : %d원\n",exchange1); 
+      
+      int thousand = (floor(exchange1 * 0.001));
+      
+      int fivehundred =(exchange1 - (thousand * 1000));
+      if(fivehundred >= 500 ){
+         fivehundred = 1;
+      }else{
+         fivehundred = 0;
+      }
+      
+      int hundred =(floor(exchange1 - ((thousand*1000)+(fivehundred*500)))*0.01);
+      int ten = (floor(exchange1 - ((thousand*1000)+(fivehundred*500)+(hundred*100)))*0.1);
+      
+      printf("천원권 : %d장\n",thousand);
+      printf("오백원 : %d개\n",fivehundred);
+      printf("백원 : %d개\n", hundred);
+      printf("십원 : %d개\n",ten);
+
+}
+   if(money == 2)
+   {
+      printf("기준 환율 : %.2f\n",JPY);
+      printf("환전결과\n");
+      printf("달러 : %d엔\n", yen);
+      exchange1 = 10 * (floor((won-(yen*JPY))*0.1));
+      printf("거스름돈 : %d원\n", exchange1);
+      
+      int thousand = (floor(exchange1 * 0.001));
+      int fivehundred =(exchange1 - (thousand * 1000));
+      if(fivehundred >= 500 )
+	  {
+         fivehundred = 1;
+      }
+	  else
+	  {
+         fivehundred = 0;
+      }
+      int hundred =(floor(exchange1 - ((thousand*1000)+(fivehundred*500)))*0.01);
+      int ten = (floor(exchange1 - ((thousand*1000)+(fivehundred*500)+(hundred*100)))*0.1);
+      
+      printf("천원권 : %d장\n",thousand);
+      printf("오백원 : %d개\n",fivehundred);
+      printf("백원 : %d개\n", hundred);
+      printf("십원 : %d개\n",ten);
+   }
+   
+   if(money == 3)
+   
+   {
+      printf("기준 환율 : %.2f\n",EUR);
+      printf("환전결과\n");
+      printf("달러 : %d유로\n", euro);
+      exchange1 =10 * (floor((won-(euro*EUR))*0.1));
+      printf("거스름돈 : %d원\n", exchange1); 
+      
+      int thousand = (floor(exchange1 * 0.001));
+      int fivehundred =(exchange1 - (thousand * 1000));
+      if(fivehundred >= 500)
+	  {
+         fivehundred = 1;
+      }
+	  else
+	  {
+         fivehundred = 0;
+      }
+      int hundred =(floor(exchange1 - ((thousand*1000)+(fivehundred*500)))*0.01);
+      int ten = (floor(exchange1 - ((thousand*1000)+(fivehundred*500)+(hundred*100)))*0.1);
+      
+      printf("천원권 : %d장\n",thousand);
+      printf("오백원 : %d개\n",fivehundred);
+      printf("백원 : %d개\n", hundred);
+      printf("십원 : %d개\n",ten);
+   }
+   
+   if(money == 4)
+   {
+      printf("기준 환율 : %.2f\n",CNY);
+      printf("환전결과\n");
+      printf("달러 : %d위안\n", yuan);
+      exchange1 =10 * (floor((won-(yuan*CNY))*0.1));
+      printf("거스름돈 : %d원\n", exchange1);
+      
+      int thousand = (floor(exchange1 * 0.001));
+      int fivehundred =(exchange1 - (thousand * 1000));
+      if(fivehundred >= 500 )
+	  {
+         fivehundred = 1;
+      }
+	  else
+	  {
+         fivehundred = 0;
+      }
+      int hundred =(floor(exchange1 - ((thousand*1000)+(fivehundred*500)))*0.01);
+      int ten = (floor(exchange1 - ((thousand*1000)+(fivehundred*500)+(hundred*100)))*0.1);
+      
+      printf("천원권 : %d장\n",thousand);
+      printf("오백원 : %d개\n",fivehundred);
+      printf("백원 : %d개\n", hundred);
+      printf("십원 : %d개\n",ten);
+   }
+   
+   if(money == 5)
+   {
+      printf("기준 환율 : %.2f\n",GBP);
+      printf("환전결과\n");
+      printf("달러 : %d파운드\n", pound);
+      exchange1 =10 * (floor((won-(pound*GBP))*0.1));
+      printf("거스름돈 : %d원\n", exchange1);
+    
+      int thousand = (floor(exchange1 * 0.001));
+      int fivehundred =(exchange1 - (thousand * 1000));
+      if(fivehundred >= 500 )
+	  {
+         fivehundred = 1;
+      }
+	  else
+	  {
+         fivehundred = 0;
+      }
+      int hundred =(floor(exchange1 - ((thousand*1000)+(fivehundred*500)))*0.01);
+      int ten = (floor(exchange1 - ((thousand*1000)+(fivehundred*500)+(hundred*100)))*0.1);
+      
+      printf("천원권 : %d장\n",thousand);
+      printf("오백원 : %d개\n",fivehundred);
+      printf("백원 : %d개\n", hundred);
+      printf("십원 : %d개\n",ten); 
+   }
+
+   return 0; 
+	}	
